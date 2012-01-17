@@ -5,7 +5,7 @@
    <code>
 		<?php echo $news_item['text'] = word_limiter($news_item['text'], 35); ?>
     </code>
-	</div>
-    <p><a href="/index.php/news/<?php echo $news_item['slug']; ?>">Leer m&aacute;s</a></p>
+	</div><?php /* Las URLs como estas deberían ser dadas completas ya que pueden estar en subcarpetas y no en la raíz */ ?>
+    <p><a href="/index.php/news/<?php echo $news_item['id']; ?>">Leer m&aacute;s</a></p>
 <?php endforeach ?>
 	</div>
