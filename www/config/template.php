@@ -13,7 +13,7 @@
 |
 */
 
-$config['parser_enabled'] = TRUE;
+$config['parser_enabled'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ $config['parser_enabled'] = TRUE;
 |
 */
 
-$config['parser_body_enabled'] = TRUE;
+$config['parser_body_enabled'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ $config['title_separator'] = ' | ';
 |
 */
 
-$config['layout'] = 'retail';
+$config['layout'] = 'base';
 
 /*
 |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ $config['layout'] = 'retail';
 |
 */
 
-$config['theme'] = '';
+$config['theme'] = 'retail';
 
 /*
 |--------------------------------------------------------------------------

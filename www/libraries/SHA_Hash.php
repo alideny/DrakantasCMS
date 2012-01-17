@@ -4,7 +4,6 @@ class SHA_Hash {
 
     public function __construct()
     {
-        parent::__construct();
     }
 	public function sha_password($user,$pass){
 					$user = strtoupper($user);
