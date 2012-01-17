@@ -5,17 +5,20 @@ class News_model extends CI_Model {
 	{
 		parent::__construct();
 	}
-	public function get_news($slug = FALSE)
-{
-	if ($slug === FALSE)
+	public function get_news($Id = NULL)
 	{
-		$query = $this->db->query("SELECT * FROM drak_news ORDER BY id DESC");
-		return $query->result_array();
-	}
+		if (is_null($Id))
+		{
+			$query = $this->db->query("SELECT * FROM `drak_news` ORDER BY `id` DESC");
+			return $query->result_array();
+		}
+		else
+		{
+			$query = $this -> db -> get_where('drak_news', array('id' => $Id));
+			return $query -> row_array();
+		}
 	
-	$query = $this->db->get_where('drak_news', array('slug' => $slug));
-	return $query->row_array();
-}
+	}
 	public function set_news()
 {
 	$this->load->helper('url');
