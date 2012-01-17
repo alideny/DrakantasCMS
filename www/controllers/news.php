@@ -10,15 +10,15 @@ class News extends CI_Controller {
 	}
 
 	public function index()
-{
+	{
 	$this->load->helper("text");
 	$data['news'] = $this->news_model->get_news();
 	$this->template->build('index', $data);
-}
+	}
 
-	public function view($slug)
-{
-	$data['news_item'] = $this->news_model->get_news($slug);
+	public function view($Id)
+	{
+	$data['news_item'] = $this->news_model->get_news($Id);
 
 	if (empty($data['news_item']))
 	{
