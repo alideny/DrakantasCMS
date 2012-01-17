@@ -6,13 +6,14 @@ class News extends CI_Controller {
 		parent::__construct();
 		$this->load->model('news_model');
 		$title = $this->config->item('site_title');
-		$website_path = $this->config->item('base_url');
 		$this->template->title($title);
 	}
 
 	public function index()
 	{
 	$this->load->helper("text");
+	$theme = $this->config->item('theme');
+	$this->template->prepend_metadata('<script src="'.APPPATH.'themes/'.$theme.'/js/jquery.js"></script>');
 	$data['news'] = $this->news_model->get_news();
 	$this->template->build('index', $data);
 	}
