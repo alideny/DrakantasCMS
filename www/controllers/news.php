@@ -6,6 +6,7 @@ class News extends CI_Controller {
 		parent::__construct();
 		$this->load->model('news_model');
 		$title = $this->config->item('site_title');
+		$website_path = $this->config->item('base_url');
 		$this->template->title($title);
 	}
 

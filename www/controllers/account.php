@@ -1,27 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Account extends CI_Controller {
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('account_model');
-		$this->load->model('encryption_model');
+		$this->load->library('SHA_Hash');
 		$title = $this->config->item('site_title');
+		$website_path = $this->config->item('base_url');
 		$this->template->title($title);
 	}
 	public function index()
@@ -46,8 +33,6 @@ class Account extends CI_Controller {
 	}
 	public function register()
 	{
-	$this->load->helper(array('form', 'url'));
-
 		$this->form_validation->set_rules('username', 'Username', 'is_unique[account.username]|trim|required|min_length[5]|max_length[12]|xss_clean');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|matches[repeat_password]|xss_clean');
 		$this->form_validation->set_rules('repeat_password', 'Password Confirmation', 'trim|required|xss_clean');
@@ -77,7 +62,7 @@ class Account extends CI_Controller {
          }
          else{
             $this->load->model('account_model');
-			$password = $this->encryption_model->sha_password($this->input->post('username'), $this->input->post('password'));
+			$password = $this->SHA_Hash->sha_password($this->input->post('username'), $this->input->post('password'));
             $Load_data = $this->account_model->login($this->input->post('username'), $password);
             if($Load_data){
 			   $login_data = array(
