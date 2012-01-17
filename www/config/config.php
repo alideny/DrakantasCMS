@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/';
+$config['base_url']	= ''; //URL del Sitio
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'b6k2l9of6nw09327fbd1ñd7bjwucurkb';
+$config['encryption_key'] = 'b6k2l9of6nw09327fbd1ï¿½d7bjwucurkb';
 
 $config['sess_cookie_name']		= 'Drak_sessions';
 $config['sess_expiration']		= 7200;
