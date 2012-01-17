@@ -1,4 +1,6 @@
-﻿/*Table structure for table `drak_index_slideshow` */
+/*Table structure for table `drak_index_slideshow` */
+
+DROP TABLE IF EXISTS `drak_index_slideshow`;
 
 CREATE TABLE `drak_index_slideshow` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -13,6 +15,8 @@ CREATE TABLE `drak_index_slideshow` (
 insert  into `drak_index_slideshow`(`id`,`title`,`desc`) values (1,'DrakantasCMS','DrakantasCMS, solo tu sabes su poder =)');
 
 /*Table structure for table `drak_news` */
+
+DROP TABLE IF EXISTS `drak_news`;
 
 CREATE TABLE `drak_news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -29,6 +33,7 @@ insert  into `drak_news`(`id`,`title`,`slug`,`text`) values (1,'DrakantasCMS','d
 insert  into `drak_news`(`id`,`title`,`slug`,`text`) values (2,'DrakantasCMS UPDATE','drakantascms-update','DrakantasCMS v.0.0.3 ya revelada!!<br />\r\nChangelog:<br />\r\n. Se agregar&aacute; seguridad para todas las query\'s del sitio.<br />\r\n. Creación de Libreria Personalizada(Telnet y SHA1 Encryption).<br />\r\n. Sistema de Comentarios para las noticias.<br />\r\nPara v.0.0.4:<br />\r\n. Se agregar&aacute; seguridad para todas las query\'s del sitio.<br />\r\n. Creación de Libreria de Wow(Telnet y SHA1 Encryption).<br />\r\n. Sistema de Comentarios para las noticias.');
 
 /*Table structure for table `drak_users` */
+DROP TABLE IF EXISTS `drak_users`;
 
 CREATE TABLE `drak_users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identifier',
