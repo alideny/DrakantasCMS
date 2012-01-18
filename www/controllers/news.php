@@ -16,6 +16,7 @@ class News extends CI_Controller {
 		$theme = $this->config->item('theme');
 		$this->template->prepend_metadata('<script src="'.APPPATH.'themes/'.$theme.'/js/jquery.js"></script>');
 		$data['news'] = $this->news_model->get_news();
+		$data['islider'] = $this->islideshow_model->get_slides();
 		$this->template->build('index', $data);
 	}
 

@@ -1,5 +1,5 @@
 <?php
-class iSlideshow_model extends CI_Model {
+class islideshow_model extends CI_Model {
 
 	function __construct()
 	{
