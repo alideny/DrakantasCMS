@@ -8,7 +8,7 @@
 		if($expansion == 1){print "The Burning Crusade";}
 		if($expansion == 0){print "Classic";}
 		?></b></p>
-		<p>Baneado: <b style="text-transform:capitalize;"><?php if($banned != 0){print "Baneado";}else{print "No Baneado";} ?></b></p>
+		<p>Bloqueado: <b style="text-transform:capitalize;"><?php ($locked != 0) ? print "Baneado" : print "No Baneado"; ?></b></p>
 		<p>Monedas: <b style="text-transform:capitalize;"><?php echo $coins; ?></b></p>
 		<p>Puntos: <b style="text-transform:capitalize;"><?php echo $points; ?></b></p>
 	</div>
