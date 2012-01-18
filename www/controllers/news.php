@@ -7,6 +7,7 @@ class News extends CI_Controller {
 		$this->load->model('news_model');
 		$title = $this->config->item('site_title');
 		$this->template->title($title);
+		$this->load->helper('date');
 	}
 
 	public function index()
@@ -32,15 +33,19 @@ class News extends CI_Controller {
 		$data['total_comments'] = 0;
 		}			
 		$data['comments'] = $this->news_model->get_comments($Id);
-
+		$this->form_validation->set_rules('comment', 'Comment', 'required');
+		if ($this->form_validation->run() === FALSE)
+		{
 		$this->template->build('news/view', $data);
+		}
+		else
+		{
+		$this->news_model->set_comments($Id);
+		redirect('news/'.$Id.'', 'refresh');
+		}
 	}
 	public function create()
 	{
-		$this->load->helper('form');
-		
-		$data['title'] = 'Create a news item';
-		
 		$this->form_validation->set_rules('title', 'Title', 'required');
 		$this->form_validation->set_rules('text', 'text', 'required');
 		

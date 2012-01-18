@@ -36,7 +36,7 @@ class News_model extends CI_Model {
 	
 	public function get_total_comments($Id = NULL)
 	{
-		if(is_null($Id))
+		if($Id === NULL)
 		{
 			return FALSE;
 		}
@@ -58,6 +58,26 @@ class News_model extends CI_Model {
 			$query = $this->db->where('id_news', $Id);
 			$query = $this->db->get('drak_news_comments');
 			return $query->result_array();
+		}
+	}
+	public function set_comments($Id)
+	{
+	if($Id === NULL)
+		{
+			return FALSE;
+		}
+		else
+		{
+	$datestring = "%d-%m-%Y | %h:%i %a";
+	$time = time();
+	$set_date = mdate($datestring, $time);
+	$data = array(
+			'id_news' => $Id,
+			'user' => $this->session->userdata('username'),
+			'date' => $set_date,
+			'comment' => $this->input->post('comment')
+		);
+	return $this->db->insert('drak_news_comments', $data);
 		}
 	}
 }
