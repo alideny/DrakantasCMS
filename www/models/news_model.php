@@ -38,25 +38,26 @@ class News_model extends CI_Model {
 	{
 		if(is_null($Id))
 		{
-			return false;
+			return FALSE;
 		}
 		else
 		{
-			$query = $this -> db -> get_where('drak_news_comments', array('id_news' => $Id));
-			return $query -> num_rows();
+			$query = $this-> db->get_where('drak_news_comments', array('id_news' => $Id));
+			return $query->num_rows();
 		}
 	}
 	
 	public function get_comments($Id)
 	{
-		if(is_null($Id))
+		if($Id === NULL)
 		{
-			return false;
+			return FALSE;
 		}
 		else
 		{
-			$query = $this -> db -> get_where('drak_news_comments', array('id_news' => $Id));
-			return $query -> row_array();
+			$query = $this->db->where('id_news', $Id);
+			$query = $this->db->get('drak_news_comments');
+			return $query->result_array();
 		}
 	}
 }

@@ -26,13 +26,12 @@ class News extends CI_Controller {
 			show_404();
 		}
 		$data['title'] = $data['news_item']['title'];
-		
-		$data['total_comments'] = $this -> news_model -> get_total_comments($Id);
-		
+		$data['total_comments'] = $this->news_model->get_total_comments($Id);
 		if(empty($data['total_comments']))
-			$data['total_comments'] = 0;
-			
-		$data['comments'] = $this -> news_model -> get_comments($Id);
+		{
+		$data['total_comments'] = 0;
+		}			
+		$data['comments'] = $this->news_model->get_comments($Id);
 
 		$this->template->build('news/view', $data);
 	}
