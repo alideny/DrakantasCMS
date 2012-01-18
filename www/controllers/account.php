@@ -19,7 +19,7 @@ class Account extends CI_Controller {
 	'email' => $this->account_model->get_info('email', $username),
 	'joindate' => $this->account_model->get_info('joindate', $username),
 	'expansion' => $this->account_model->get_info('expansion', $username),
-	'banned' => $this->account_model->get_info('locked', $username),
+	'locked' => $this->account_model->get_info('locked', $username),
 	'coins' => $this->account_model->get_drakinfo('coins', $username),
 	'points' => $this->account_model->get_drakinfo('points', $username),
 	);
