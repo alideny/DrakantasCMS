@@ -7,15 +7,15 @@ class News_model extends CI_Model {
 	}
 	public function get_news($Id = NULL)
 	{
-		if (is_null($Id))
+		if ($Id === NULL)
 		{
 			$query = $this->db->query("SELECT * FROM `drak_news` ORDER BY `id` DESC");
 			return $query->result_array();
 		}
 		else
 		{
-			$query = $this -> db -> get_where('drak_news', array('id' => $Id));
-			return $query -> row_array();
+			$query = $this->db->get_where('drak_news', array('id' => $Id));
+			return $query->row_array();
 		}
 	
 	}
@@ -42,7 +42,7 @@ class News_model extends CI_Model {
 		}
 		else
 		{
-			$query = $this-> db->get_where('drak_news_comments', array('id_news' => $Id));
+			$query = $this->db->get_where('drak_news_comments', array('id_news' => $Id));
 			return $query->num_rows();
 		}
 	}
