@@ -49,7 +49,7 @@ class Account extends CI_Controller {
 			$this->template->build('account/register_sucess');
 		}
 	}
-	public function login($idioma=null)
+	public function login($idioma = NULL)
    {
       if(!isset($_POST['username'])){  
       $this->template->build('account/login');

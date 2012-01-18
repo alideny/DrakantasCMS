@@ -33,7 +33,7 @@ class News extends CI_Controller {
 		$data['total_comments'] = 0;
 		}			
 		$data['comments'] = $this->news_model->get_comments($Id);
-		$this->form_validation->set_rules('comment', 'Comment', 'required');
+		$this->form_validation->set_rules('comment', 'Comment', 'required|min_length[5]|max_length[250]|xss_clean');
 		if ($this->form_validation->run() === FALSE)
 		{
 		$this->template->build('news/view', $data);
