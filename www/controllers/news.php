@@ -5,7 +5,6 @@ class News extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('news_model');
-		$this->load->model('islideshow_model');
 		$title = $this->config->item('site_title');
 		$this->template->title($title);
 		$this->load->helper('date');
