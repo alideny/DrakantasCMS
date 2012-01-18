@@ -10,10 +10,6 @@ CREATE TABLE `drak_index_slideshow` (
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-/*Data for the table `drak_index_slideshow` */
-
-insert  into `drak_index_slideshow`(`id`,`title`,`desc`) values (1,'DrakantasCMS','DrakantasCMS, solo tu sabes su poder =)');
-
 /*Table structure for table `drak_news` */
 
 DROP TABLE IF EXISTS `drak_news`;
@@ -26,11 +22,6 @@ CREATE TABLE `drak_news` (
   PRIMARY KEY (`id`),
   KEY `slug` (`slug`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
-/*Data for the table `drak_news` */
-
-insert  into `drak_news`(`id`,`title`,`slug`,`text`) values (1,'DrakantasCMS','drakantascms','DrakantasCMS v.0.0.2 ya revelada!!<br />\r\nChangelog:<br />\r\n. Agregado sistema de login.<br />\r\n. Fixeado sistema de registro de cuentas y de noticias.<br />\r\n. Panel de cuenta (Obtenci&oacute;n de informaci&oacute;n terminado).<br />\r\nPara v.0.0.3:<br />\r\n. Se agregar&aacute; seguridad para todas las query\'s del sitio.<br />\r\n. Creación de Libreria de Wow(Telnet y SHA1 Encryption).<br />\r\n. Sistema de Comentarios para las noticias.');
-insert  into `drak_news`(`id`,`title`,`slug`,`text`) values (2,'DrakantasCMS UPDATE','drakantascms-update','DrakantasCMS v.0.0.3 ya revelada!!<br />\r\nChangelog:<br />\r\n. Se agregar&aacute; seguridad para todas las query\'s del sitio.<br />\r\n. Creación de Libreria Personalizada(Telnet y SHA1 Encryption).<br />\r\n. Sistema de Comentarios para las noticias.<br />\r\nPara v.0.0.4:<br />\r\n. Se agregar&aacute; seguridad para todas las query\'s del sitio.<br />\r\n. Creación de Libreria de Wow(Telnet y SHA1 Encryption).<br />\r\n. Sistema de Comentarios para las noticias.');
 
 /*Table structure for table `drak_users` */
 DROP TABLE IF EXISTS `drak_users`;
@@ -59,9 +50,3 @@ CREATE TABLE `drak_news_comments` (
   `comment` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of drak_news_comments
--- ----------------------------
-INSERT INTO drak_news_comments VALUES ('1', '1', 'Asfo', '01-01-2011', 'Prueba');
-INSERT INTO drak_news_comments VALUES ('2', '1', 'Asfo', '01-01-2012', 'Lorem ipsum');
