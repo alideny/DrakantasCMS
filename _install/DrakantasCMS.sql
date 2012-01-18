@@ -45,3 +45,23 @@ CREATE TABLE `drak_users` (
   PRIMARY KEY (`id`),
   KEY `idx_gmlevel` (`level`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Account System';
+
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for `drak_news_comments`
+-- ----------------------------
+DROP TABLE IF EXISTS `drak_news_comments`;
+CREATE TABLE `drak_news_comments` (
+  `id` int(50) unsigned NOT NULL AUTO_INCREMENT,
+  `id_news` int(20) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `date` varchar(60) NOT NULL,
+  `comment` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of drak_news_comments
+-- ----------------------------
+INSERT INTO drak_news_comments VALUES ('1', '1', 'Asfo', '01-01-2011', 'Prueba');
+INSERT INTO drak_news_comments VALUES ('2', '1', 'Asfo', '01-01-2012', 'Lorem ipsum');
